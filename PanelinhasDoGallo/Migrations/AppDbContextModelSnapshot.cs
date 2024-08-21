@@ -46,6 +46,26 @@ namespace PanelinhasDoGallo.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "0b44ca04-f6b0-4a8f-a953-1f2330d30894",
+                            Name = "Administrador",
+                            NormalizedName = "ADMINISTRADOR"
+                        },
+                        new
+                        {
+                            Id = "bec71b05-8f3d-4849-88bb-0e8d518d2de8",
+                            Name = "Usuário",
+                            NormalizedName = "USUÁRIO"
+                        },
+                        new
+                        {
+                            Id = "ddf093a6-6cb5-4ff7-9a64-83da34aee005",
+                            Name = "Moderador",
+                            NormalizedName = "MODERADOR"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -135,6 +155,40 @@ namespace PanelinhasDoGallo.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "ddf093a6-6cb5-4ff7-9a64-83da34aee005",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "c0f8cb56-a568-4c89-a56b-bfc0169aeca2",
+                            Email = "admin@panelinhasdogalo.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@PANELINHASDOGALO.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIGEIb0UX2+m56RzH1wDh07d1osuGP2Kyiq7lZd5qmjcVpvhMDclAoV+Kj6AO2Idvg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "0b207868-3b3b-4468-8fe8-086935ae795d",
+                            TwoFactorEnabled = false,
+                            UserName = "Admin"
+                        },
+                        new
+                        {
+                            Id = "0b44ca04-f6b0-4a8f-a953-1f2330d30894",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "0d5eee03-5682-4c2c-8bec-38d3da5d2aff",
+                            Email = "Nikolau@panelinhasdogalo.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "NIKOLAU@PANELINHASDOGALO.COM",
+                            NormalizedUserName = "NIKOLAU",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKx13BB06Z8EQTpSexIvv4ON4JGB+35c2k5O98+Bom58+/OZbPp5Lpwh4cTf3Dopkg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "985b9b29-eee3-4db5-a6dd-59eeff75ce49",
+                            TwoFactorEnabled = false,
+                            UserName = "Nikolau"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -197,6 +251,28 @@ namespace PanelinhasDoGallo.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "ddf093a6-6cb5-4ff7-9a64-83da34aee005",
+                            RoleId = "0b44ca04-f6b0-4a8f-a953-1f2330d30894"
+                        },
+                        new
+                        {
+                            UserId = "ddf093a6-6cb5-4ff7-9a64-83da34aee005",
+                            RoleId = "bec71b05-8f3d-4849-88bb-0e8d518d2de8"
+                        },
+                        new
+                        {
+                            UserId = "ddf093a6-6cb5-4ff7-9a64-83da34aee005",
+                            RoleId = "ddf093a6-6cb5-4ff7-9a64-83da34aee005"
+                        },
+                        new
+                        {
+                            UserId = "0b44ca04-f6b0-4a8f-a953-1f2330d30894",
+                            RoleId = "bec71b05-8f3d-4849-88bb-0e8d518d2de8"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -226,6 +302,9 @@ namespace PanelinhasDoGallo.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("ExibirHome")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<string>("Foto")
                         .HasMaxLength(300)
                         .HasColumnType("varchar(300)");
@@ -238,6 +317,78 @@ namespace PanelinhasDoGallo.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categoria");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ExibirHome = true,
+                            Foto = "/img/categorias/1.jpg",
+                            Nome = "Acompanhamentos"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ExibirHome = false,
+                            Foto = "/img/categorias/2.jpg",
+                            Nome = "Bebidas"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ExibirHome = true,
+                            Foto = "/img/categorias/3.jpg",
+                            Nome = "Bolos"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ExibirHome = true,
+                            Foto = "/img/categorias/4.jpg",
+                            Nome = "Carnes"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            ExibirHome = true,
+                            Foto = "/img/categorias/5.jpg",
+                            Nome = "Frango"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            ExibirHome = false,
+                            Foto = "/img/categorias/6.jpg",
+                            Nome = "Lanches"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            ExibirHome = false,
+                            Foto = "/img/categorias/7.jpg",
+                            Nome = "Massas"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            ExibirHome = false,
+                            Foto = "/img/categorias/8.jpg",
+                            Nome = "Molhos"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            ExibirHome = true,
+                            Foto = "/img/categorias/9.jpg",
+                            Nome = "Pratos Principais"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            ExibirHome = false,
+                            Foto = "/img/categorias/10.jpg",
+                            Nome = "Peixes"
+                        });
                 });
 
             modelBuilder.Entity("PanelinhasDoGallo.Models.Comentario", b =>
@@ -287,6 +438,78 @@ namespace PanelinhasDoGallo.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Ingrediente");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Nome = "Carne Moída"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Nome = "Pimentão Verde"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Nome = "Pimentão Vermelho"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Nome = "Pimentão Amarelo"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Nome = "Cebola"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Nome = "Curry"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Nome = "Pimenta Calabresa"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Nome = "Páprica Picante"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Nome = "Sal"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Nome = "Orégano"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Nome = "Pão Sirio"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Nome = "Cream Cheese"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Nome = "Cheddar"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Nome = "Azeite"
+                        });
                 });
 
             modelBuilder.Entity("PanelinhasDoGallo.Models.Receita", b =>
@@ -333,6 +556,20 @@ namespace PanelinhasDoGallo.Migrations
                     b.HasIndex("CategoriaId");
 
                     b.ToTable("Receita");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoriaId = 4,
+                            Descricao = "Prato perfeito para um lanche rápido ou mesmo uma refeição picante. Carne moída, pimentões, temperos e muito queijooooo",
+                            Dificuldade = 1,
+                            Foto = "/img/receitas/1.jpg",
+                            Nome = "Carne Moída Mexicana",
+                            Preparo = "Comece pela preparação dos ingredientes, pique os pimentões e a cebola em pequenos cubos, se preferir você também pode usar um processador de alimentos.Coloque a carne moída para fritar em uma panela com um pouco de azeite.Quando a carne moída já não estiver mais crua, adicione os pimentões e a cebola, mexendo bem para misturar todos os ingredientes.Aguarde alguns instante e adicione os temperos, mexendo novamente para misturar.Frite por mais alguns minutos a carne com os demais ingredientes.Adicione o Cream Cheese e o Queijo Cheddar, mexendo bem para evitar que queime o fundo e ajudar os queijos a derreterem.Quando os queijos já estiverem bem derretidos e misturados com os demais ingredientes, sirva acompanhado do Pão Sirio ou de Doritos.",
+                            Rendimento = 3,
+                            TempoPreparo = "20 minutos"
+                        });
                 });
 
             modelBuilder.Entity("PanelinhasDoGallo.Models.ReceitaIngrediente", b =>
@@ -355,6 +592,86 @@ namespace PanelinhasDoGallo.Migrations
                     b.HasIndex("IngredienteId");
 
                     b.ToTable("ReiceitaIngrediente");
+
+                    b.HasData(
+                        new
+                        {
+                            ReceitaId = 1,
+                            IngredienteId = 1,
+                            Quantidade = "500g"
+                        },
+                        new
+                        {
+                            ReceitaId = 1,
+                            IngredienteId = 3,
+                            Quantidade = "1 pequeno"
+                        },
+                        new
+                        {
+                            ReceitaId = 1,
+                            IngredienteId = 4,
+                            Quantidade = "1 pequeno"
+                        },
+                        new
+                        {
+                            ReceitaId = 1,
+                            IngredienteId = 5,
+                            Quantidade = "1 pequeno"
+                        },
+                        new
+                        {
+                            ReceitaId = 1,
+                            IngredienteId = 6,
+                            Quantidade = "1 colher sopa"
+                        },
+                        new
+                        {
+                            ReceitaId = 1,
+                            IngredienteId = 7,
+                            Quantidade = "1 colher sopa"
+                        },
+                        new
+                        {
+                            ReceitaId = 1,
+                            IngredienteId = 8,
+                            Quantidade = "1 colher sopa"
+                        },
+                        new
+                        {
+                            ReceitaId = 1,
+                            IngredienteId = 9,
+                            Quantidade = "1 colher sopa"
+                        },
+                        new
+                        {
+                            ReceitaId = 1,
+                            IngredienteId = 10,
+                            Quantidade = "1 colher sopa"
+                        },
+                        new
+                        {
+                            ReceitaId = 1,
+                            IngredienteId = 11,
+                            Quantidade = "A vontade"
+                        },
+                        new
+                        {
+                            ReceitaId = 1,
+                            IngredienteId = 12,
+                            Quantidade = "200g"
+                        },
+                        new
+                        {
+                            ReceitaId = 1,
+                            IngredienteId = 13,
+                            Quantidade = "200g"
+                        },
+                        new
+                        {
+                            ReceitaId = 1,
+                            IngredienteId = 14,
+                            Quantidade = "Um pouco"
+                        });
                 });
 
             modelBuilder.Entity("PanelinhasDoGallo.Models.Usuario", b =>
@@ -377,6 +694,22 @@ namespace PanelinhasDoGallo.Migrations
                     b.HasKey("UsuarioId");
 
                     b.ToTable("Usuario");
+
+                    b.HasData(
+                        new
+                        {
+                            UsuarioId = "ddf093a6-6cb5-4ff7-9a64-83da34aee005",
+                            DataNascimento = new DateTime(1981, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Foto = "/img/usuarios/avatar.png",
+                            Nome = "José Antonio Gallo Junior"
+                        },
+                        new
+                        {
+                            UsuarioId = "0b44ca04-f6b0-4a8f-a953-1f2330d30894",
+                            DataNascimento = new DateTime(2007, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Foto = "/img/usuarios/avatar.png",
+                            Nome = "Nikolau"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
