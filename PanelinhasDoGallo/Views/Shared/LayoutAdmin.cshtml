@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="José Antonio Gallo Junior">
+    <title>Panelinhas do Gallo - @ViewData["Title"]</title>
+
+    <!-- Favicons -->
+    <link rel="icon" href="~/img/logo.png" type="image/png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" ref="stylesheet"/>
+    <link href="~/css/admin.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <nav class="navbar-dark sticky-top bg-dark fkex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3 fs-4 bg-dark "asp-controller="Index" asp-controller="Admin"></a>
+            <img src="~/img/logo.png" alt="GCook" class="me-2" width="40">$nbsp;
+            Panelinhas do Gallo
+        </a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
+         data-target="#sidebarMenu" aria-controls="sidebarMenu'" aria-expanded="false" aria-label="toggle navgaation">
+         <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <partial name="-LoginPartial"></partial>
+
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="sidebar-sticky pt-4">
+                    <ul class="nav flex-column pe-2">
+                        <li class="nav-item py-1 bg-dark rounded-end-5">
+                            <a class="nav-link fs-6 active" href="#">
+                                <i class="bi bi-house-fill fs-5"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item py-1">
+                            <a class="nav-link fs-6" href="#">
+                             <i class="bi bi-file-text-fill fs-5"></i>
+                             Receitas
+                            </a>
+                        </li>
+                        <li class="nav-item py-1">
+                            <a class="nav-link fs-6" href="#"> 
+                                <i class="bi bi-fire fs-5"></i>
+                                Categorias
+                            </a>
+                        </li>
+                        <li class="nav-item py-1">
+                            <a class="nav-link fs-6" href="#"> 
+                                <i class="bi bi-egg-fried"></i>
+                                Igredientes
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist.js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @await RenderSectionAsync("Sripts", required: false)
+
+</body>
