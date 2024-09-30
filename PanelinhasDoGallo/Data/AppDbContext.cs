@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PanelinhasDoGallo.Models;
 
@@ -21,6 +22,7 @@ public class AppDbContext : IdentityDbContext
     {
         base.OnModelCreating(builder);
         AppDbSeed seed = new(builder);
+        
         builder.Entity<ReceitaIngrediente>()
             .HasKey(ri => new { ri.ReceitaId, ri.IngredienteId });
     }
