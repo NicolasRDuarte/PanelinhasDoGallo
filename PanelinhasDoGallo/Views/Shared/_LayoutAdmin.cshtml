@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="José Antonio Gallo Junior">
-    <title>Panelinhas do Gallo - @ViewData["Title"]</title>
+    <title>GCook - @ViewData["Title"]</title>
 
     <!-- Favicons -->
     <link rel="icon" href="~/img/logo.png" type="image/png">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" ref="stylesheet"/>
-    <link href="~/css/admin.css" rel="stylesheet" />
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/admin.css" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar-dark sticky-top bg-dark fkex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3 fs-4 bg-dark "asp-controller="Index" asp-controller="Admin"></a>
-            <img src="~/img/logo.png" alt="GCook" class="me-2" width="40">$nbsp;
-            Panelinhas do Gallo
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3 fs-4 bg-dark" asp-action="Index" asp-controller="Admin">
+            <img src="~/img/logo.png" alt="GCook" class="me-2" width="40">&nbsp;
+            GCook
         </a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
-         data-target="#sidebarMenu" aria-controls="sidebarMenu'" aria-expanded="false" aria-label="toggle navgaation">
-         <span class="navbar-toggler-icon"></span>
+            data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
 
-        <partial name="-LoginPartial"></partial>
+        <partial name="_LoginPartial"></partial>
 
     </nav>
+
     <div class="container-fluid">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
@@ -41,20 +42,20 @@
                         </li>
                         <li class="nav-item py-1">
                             <a class="nav-link fs-6" href="#">
-                             <i class="bi bi-file-text-fill fs-5"></i>
-                             Receitas
+                                <i class="bi bi-file-text-fill fs-5"></i>
+                                Receitas
                             </a>
                         </li>
                         <li class="nav-item py-1">
-                            <a class="nav-link fs-6" href="#"> 
+                            <a class="nav-link fs-6" href="#">
                                 <i class="bi bi-fire fs-5"></i>
                                 Categorias
                             </a>
                         </li>
                         <li class="nav-item py-1">
-                            <a class="nav-link fs-6" href="#"> 
+                            <a class="nav-link fs-6" href="#">
                                 <i class="bi bi-egg-fried"></i>
-                                Igredientes
+                                Ingredientes
                             </a>
                         </li>
                     </ul>
@@ -66,8 +67,9 @@
             </main>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist.js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    @await RenderSectionAsync("Sripts", required: false)
-
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
+
+</html>

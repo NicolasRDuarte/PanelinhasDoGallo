@@ -6,7 +6,7 @@
 @if (usuario == null)
 {
     <a asp-action="Login" asp-controller="Account" class="me-2">
-        <img src="~/img/usuarios/no-photo.png" width="40" class="object-fit-cover rounded-5">
+        <img src="~/img/usuarios/no-photo.png" width="40" height="40" class="object-fit-cover rounded-5">
     </a>
 }
 else
@@ -31,7 +31,7 @@ else
             }
             <li>
                 <a class="dropdown-item" href="#">
-                    <i class="bi bi-person-bouding-box"></i> Gerenciar Conta
+                    <i class="bi bi-person-bounding-box"></i> Gerenciar Conta
                 </a>
             </li>
             <li>
@@ -42,6 +42,5 @@ else
                 </form>
             </li>
         </ul>
-
     </div>
 }
