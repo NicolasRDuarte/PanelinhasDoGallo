@@ -7,7 +7,7 @@
 
 @if (!Model.Enviado)
 {
-    <form class="from-signup" method="post" enctype="multipart/form-data">
+    <form class="form-signup" method="post" enctype="multipart/form-data">
         <div asp-validation-summary="ModelOnly" hidden></div>
         <div class="form-floating mb-3">
             <input asp-for="Nome" class="form-control">
@@ -79,10 +79,10 @@ else
     <script type="text/javascript">
         
         let mensagemErro = '';
-        $(".Validation-summary-errors ul li").each(function () {
+        $(".validation-summary-errors ul li").each(function () {
             mensagemErro += $(this).text() + '<br/>';
         });
-        if (mensagemErro != '')
+        if (mensagemErro != '') {
             swal.fire(
                 'Acesso Negado',
                 mensagemErro,
