@@ -13,3 +13,13 @@ dotnet ef migrations add criar-banco
 
 Executar a migração e alterar o banco de dados
 dotnet ef database update
+
+Gerar codigo CRUD
+dotnet-aspnet-codegenerator
+
+Pacotes a Instalar
+Microsoft.VisualStudio.Web.CodeGeneration.Design
+ Microsoft.EntityFrameworkCore.SqlServer
+
+Gerar Controller e Views de CRUD:
+    dotnet-aspnet-codegenerator controller -name CategoriasController -m Categoria -dc AppDbContext -l "~/Views/Shared/_LayoutAdmin.cshtml" -outDir Controllers
