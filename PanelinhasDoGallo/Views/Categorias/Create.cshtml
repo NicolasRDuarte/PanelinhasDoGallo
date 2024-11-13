@@ -19,12 +19,14 @@
             </div>
             <div class="mb-3 form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="ExibirHome" /> @Html.DisplayNameFor(model => model.ExibirHome)
+                    <input class="form-check-input" asp-for="ExibirHome" /> @Html.DisplayNameFor(model =>
+                    model.ExibirHome)
                 </label>
             </div>
             <div class="mb-3">
                 <label asp-for="Foto" class="control-label"></label>
-                <input  type="file" name="Foto" class="form-control" accept=".jpg,.jpeg,.png,.gif"/>
+                <img id="Preview">
+                <input type="file" name="Foto" class="form-control" accept=".jpg,.jpeg,.png,.gif" />
             </div>
             <div class="mb-3">
                 <input type="submit" value="Salvar" class="btn  btn-lg btn-success" />
@@ -36,6 +38,15 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial"></partial>
+        <script>
+            window.addEventListener('load', function() {
+                document.querySelector('input[type=file]')
+                    .addEventListener('change', function() {
+                        if (this.files && this.files[0]) {
+                            var img = document.getElementById('Preview');
+                            img.src = URL.createObjectURL(this.files[0]);
+                        }
+                    });
+            });
+        </script>
 }
-
-
